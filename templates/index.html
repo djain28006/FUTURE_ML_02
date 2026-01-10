@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Member Churn Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Animated Background Elements -->
+    <div class="background-animation">
+        <div class="bubble bubble-1"></div>
+        <div class="bubble bubble-2"></div>
+        <div class="bubble bubble-3"></div>
+        <div class="bubble bubble-4"></div>
+        <div class="bubble bubble-5"></div>
+        <div class="bubble bubble-6"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>💪 Gym Member Churn Predictor</h1>
+        </header>
+
+        <main>
+            <form id="churnForm">
+                <div class="grid">
+                    <div class="input-group">
+                        <input type="number" placeholder=" " name="Contract_period" id="contract" required>
+                        <label for="contract">Contract Period (months)</label>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="number" placeholder=" " name="Age" id="age" required>
+                        <label for="age">Age</label>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="number" placeholder=" " name="Lifetime" id="lifetime" required>
+                        <label for="lifetime">Lifetime (months)</label>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="number" step="any" placeholder=" " name="Avg_class_frequency_current_month"
+                            id="freq_current" required>
+                        <label for="freq_current">Avg Class Frequency (Current)</label>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="number" step="any" placeholder=" " name="Avg_class_frequency_total" id="freq_total"
+                            required>
+                        <label for="freq_total">Avg Class Frequency (Total)</label>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="number" step="any" placeholder=" " name="Avg_additional_charges_total" id="charges"
+                            required>
+                        <label for="charges">Avg Additional Charges</label>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="number" placeholder=" " name="Group_visits" id="group" required min="0" max="1">
+                        <label for="group">Group Visits (0/1)</label>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="number" placeholder=" " name="Promo_friends" id="promo" required min="0" max="1">
+                        <label for="promo">Promo Friends (0/1)</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="predict-btn">
+                    <span class="btn-text">🔮 Predict Churn</span>
+                    <span class="btn-ripple"></span>
+                </button>
+            </form>
+
+            <!-- Loading Spinner -->
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Analyzing data...</p>
+            </div>
+
+            <!-- Result Display -->
+            <div id="result" class="result hidden"></div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>
