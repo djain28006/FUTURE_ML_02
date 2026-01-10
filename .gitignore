@@ -28,5 +28,4 @@ build/
 
 # Data and Models (Optional - typically ignored if large or generated)
 *.csv
-*.pkl
-models/
+
